@@ -65,6 +65,7 @@ public class LoginController {
 		} catch (DisabledException e) {
 			throw new Exception("USER_DISABLED", e);
 		} catch (BadCredentialsException e) {
+			e.printStackTrace();
 			throw new Exception("INVALID_CREDENTIALS", e);
 		}
 	}
