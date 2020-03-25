@@ -11,6 +11,8 @@ import org.hibernate.envers.Audited;
 @Audited
 public class SoftDeletableEntity implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	public static final String SOFT_DELETED_CLAUSE = "is_deleted = 'false'";
 
 	

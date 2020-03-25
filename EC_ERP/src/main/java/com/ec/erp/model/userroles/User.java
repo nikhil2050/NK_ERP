@@ -30,6 +30,8 @@ import com.ec.erp.softdelete.SoftDeletableEntity;
 @Where(clause = SoftDeletableEntity.SOFT_DELETED_CLAUSE)
 public class User extends SoftDeletableEntity {
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;

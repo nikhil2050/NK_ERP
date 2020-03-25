@@ -25,9 +25,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//return null;	// NK
 		List<com.ec.erp.model.userroles.User> findByUserName = userRepo.findByUserName(username);
-		if(findByUserName.isEmpty()) {
+		if(findByUserName.size() > 0) {
 			com.ec.erp.model.userroles.User user = findByUserName.get(0);
 			
 			List<String> roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toList());

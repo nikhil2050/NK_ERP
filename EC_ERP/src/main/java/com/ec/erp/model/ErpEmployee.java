@@ -11,9 +11,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Where;
 import org.hibernate.envers.Audited;
-import org.springframework.data.annotation.CreatedDate;
 
 import com.ec.erp.softdelete.SoftDeletableEntity;
 
@@ -21,16 +21,18 @@ import com.ec.erp.softdelete.SoftDeletableEntity;
 @Table(name="employee_master")
 @Audited
 @Where(clause= SoftDeletableEntity.SOFT_DELETED_CLAUSE)
-public class Employee {
+public class ErpEmployee extends SoftDeletableEntity{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="employee_id", updatable=false, nullable=false)
 	private Long employeeId;
 	
-	@CreatedDate
+	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
-//	@Column(nullable = false, updatable = false)
+	@Column(nullable = false, updatable = false)
 	private Date createdDate;
 
 	private String employeeName;
@@ -118,4 +120,9 @@ public class Employee {
 		this.department = department;
 	}
 	
+	public ErpEmployee copy(ErpEmployee emp) {
+		
+		return emp;
+		
+	}
 }

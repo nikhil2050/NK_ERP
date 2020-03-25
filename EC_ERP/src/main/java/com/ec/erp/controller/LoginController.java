@@ -2,7 +2,6 @@ package com.ec.erp.controller;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +13,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ec.erp.config.JWTTokenUtils;
 import com.ec.erp.data.JwtResponse;
 import com.ec.erp.data.LoginData;
 import com.ec.erp.data.UserSignInData;
-import com.ec.erp.model.userroles.Role;
 import com.ec.erp.service.JwtUserDetailsService;
 
 
